@@ -1,0 +1,18 @@
+{
+  "id": "14ced455-ebfa-4150-88ac-2aea6861cdba",
+  "name": "Gauge Question",
+  "description": "",
+  "baseQuestionType": "OpenForm",
+  "disableDefaultRendering": false,
+  "iconUrl": "design/icon.svg",
+  "designEntryPoint": "design/index.html",
+  "runtimeEntryPoint": {
+    "component": "runtime/component.js",
+    "deps": {
+      "scripts": [],
+      "styles": [
+        "runtime/styles.css"
+      ]
+    }
+  }
+}
