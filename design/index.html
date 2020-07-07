@@ -10,7 +10,7 @@
     <div role="form" aria-labelledby="title1">
       <fieldset>
         <p><label for="gInput1">Hex Color Code: </label><span>#</span><input id="gInput1" type="text" minlength="6" maxlength="6" size="6" aria-required="true" required></p>
-        <p><label for="gInput2">Interval: </label><input id="gInput2" type="number" min="1" max="50" aria-required="true" required><span>%</span></p>
+        <p><label for="gInput2">Increments: </label><input id="gInput2" type="number" min="2" max="360" aria-required="true" required></p>
       </fieldset>
     </div>
   </div>
@@ -21,13 +21,13 @@
 
   	function setInputValue(settings) {
   		i1.value = settings.color;
-      i2.value = settings.interval;
+      i2.value = settings.increments;
     }
 
   	function saveChanges() {
   		var settings = {
         color: i1.value,
-        interval: i2.value
+        increments: i2.value
       };
 
   		var hasError = false;
