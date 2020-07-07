@@ -3,13 +3,15 @@
   "name": "Gauge Question",
   "description": "",
   "baseQuestionType": "OpenForm",
-  "disableDefaultRendering": false,
+  "disableDefaultRendering": true,
   "iconUrl": "design/icon.svg",
   "designEntryPoint": "design/index.html",
   "runtimeEntryPoint": {
     "component": "runtime/component.js",
     "deps": {
-      "scripts": [],
+      "scripts": [
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      ],
       "styles": [
         "runtime/styles.css"
       ]
