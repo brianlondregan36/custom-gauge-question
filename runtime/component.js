@@ -23,14 +23,14 @@ register(function (question, customQuestionSettings, questionViewSettings) {
       var r1 = this._GetRotation(one);
       var r2 = this._GetRotation(two);
       if( r1 != 180 ) {
-        r1 = parseInt(r1) + this._GetIncrementAmount;
+        r1 = parseInt(r1) + this._GetIncrementAmount();
         var percent = this._ComputePercent(r1);
         r1 = "rotate(" + r1 + "deg)";
         one.style.transform = r1;
         two.style.transform = r1;
       }
       else if( r1 == 180 && r2 != 360 ) {
-        r2 = parseInt(r2) + this._GetIncrementAmount;
+        r2 = parseInt(r2) + this._GetIncrementAmount();
         var percent = this._ComputePercent(r2);
         r2 = "rotate(" + r2 + "deg)";
         two.style.transform = r2;
@@ -54,14 +54,14 @@ register(function (question, customQuestionSettings, questionViewSettings) {
         fixed.style.zIndex = "3";
       }
       if( r2 != 0 && r2 <= 180) {
-        r2 = parseInt(r2) - this._GetIncrementAmount;
+        r2 = parseInt(r2) - this._GetIncrementAmount();
         var percent = this._ComputePercent(r2);
         r2 = "rotate(" + r2 + "deg)";
         one.style.transform = r2;
         two.style.transform = r2;
       }
       else if( r2 > 180 ) {
-        r2 = parseInt(r2) - this._GetIncrementAmount;
+        r2 = parseInt(r2) - this._GetIncrementAmount();
         var percent = this._ComputePercent(r2);
         r2 = "rotate(" + r2 + "deg)";
         two.style.transform = r2;
@@ -79,7 +79,7 @@ register(function (question, customQuestionSettings, questionViewSettings) {
       return Math.round(rot / 360 * 100);
     },
     _GetIncrementAmount: function() {
-      return Math.round(360/parseInt(customQuestionSettings.increments));
+      return Math.round(360 / parseInt(customQuestionSettings.increments));
     }
   }
 
