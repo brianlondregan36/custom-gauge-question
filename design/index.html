@@ -5,25 +5,45 @@
     <script src="custom-question.js"></script>
 </head>
 <body>
-<div>
-    <label for="input1">Input 1 label</label>
-    <input type="text" id="input1"/>
-</div>
-<script>
-	var inputElement = document.getElementById('input1');
+  <div>
+    <h1 id="title1">Gauge Settings</h1>
+    <div role="form" aria-labelledby="title1">
+      <fieldset>
+        <p><label for="gInput1">Hex Color Code: </label><span>#</span><input id="gInput1" type="text" minlength="6" maxlength="6" size="6" aria-required="true" required></p>
+        <p><label for="gInput2">Interval: </label><input id="gInput2" type="number" min="1" max="50" aria-required="true" required><span>%</span></p>
+      </fieldset>
+    </div>
+  </div>
 
-	function setInputValue(settings) {
-		inputElement.value = settings.mySetting1;
-	}	
+  <script>
+  	var i1 = document.getElementById('gInput1');
+    var i2 = document.getElementById('gInput2');
 
-	function saveChanges() {
-		var settings = { mySetting1: inputElement.value };
-		var hasError = inputElement.value === '';
-		customQuestion.saveChanges(settings, hasError);
-	}
+  	function setInputValue(settings) {
+  		i1.value = settings.color;
+      i2.value = settings.interval;
+    }
 
-	customQuestion.onSettingsReceived = setInputValue;
-	inputElement.addEventListener('input', saveChanges);
-</script>
+  	function saveChanges() {
+  		var settings = {
+        color: i1.value,
+        interval: i2.value
+      };
+
+  		var hasError = false;
+      if(i1.value === '') {
+        hasError = true;
+      }
+      if(i2.value === '' || i2.value < 1 || i2.value > 50) {
+        hasError = true;
+      }
+
+      customQuestion.saveChanges(settings, hasError);
+  	}
+
+  	customQuestion.onSettingsReceived = setInputValue;
+  	i1.addEventListener('input', saveChanges);
+    i2.addEventListener('input', saveChanges);
+  </script>
 </body>
 </html>
