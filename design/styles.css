@@ -1,1 +1,38 @@
-/* design styles */
+body {
+  font-family: "Source Sans Pro", "Arial", "Helvetica", "Geneva", sans-serif;
+}
+h1 {
+  padding-left: 22px;
+  font-size: 24px;
+  font-weight: 700;
+}
+fieldset {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(18, 24, 33, 0.87);
+}
+input:focus {
+  outline: 0;
+  border-color: #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+input:invalid+span:after {
+  content: '\2716';
+  padding-left: 5px;
+  color: #FF0000;
+}
+input:valid+span:after {
+  content: '\2714';
+  padding-left: 5px;
+  color: #008000;
+}
+#errorArea1 {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF0000;
+}

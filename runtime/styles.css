@@ -1,5 +1,4 @@
-/* STYLES FOR GAUGE QUESTION */
-.bl-question--gauge {
+.custom-question--gauge {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -8,7 +7,7 @@
   align-items: center;
   background-color: transparent;
 }
-.bl-question--gauge__semicircle {
+.custom-question--gauge__semicircle {
   top: 100px;
   width: 200px;
   height: 100px;
@@ -18,22 +17,22 @@
   transform-origin: top;
   transition: transform 0.5s linear;
 }
-.bl-question--gauge__semicircle--in-motion-1 {
-  background-color: #A2B0B9;
+.custom-question--gauge__semicircle--in-motion-1 {
+  background-color: #FF6347;
   transform: rotate(0deg);
   z-index: 1;
 }
-.bl-question--gauge__semicircle--in-motion-2 {
-  background-color: #A2B0B9;
+.custom-question--gauge__semicircle--in-motion-2 {
+  background-color: #FF6347;
   transform: rotate(0deg);
   z-index: 2;
 }
-.bl-question--gauge__semicircle--fixed {
+.custom-question--gauge__semicircle--fixed {
   background-color: #FFFFFF;
   border: 1px solid white;
   z-index: 3;
 }
-.bl-question--gauge__inner {
+.custom-question--gauge__inner-area {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -43,10 +42,10 @@
   text-align: center;
   z-index: 999;
 }
-.bl-question--gauge__inner p {
+.custom-question--gauge__label {
   padding-top: 6%;
   font-family: verdana;
   font-size: 24px;
   font-weight: bold;
-  color: #A2B0B9;
+  color: #000000;
 }
