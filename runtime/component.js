@@ -11,7 +11,7 @@ register(function (question, customQuestionSettings, questionViewSettings) {
       $('<div class="cf-question__instruction">' + this.q.instruction + '</div>').appendTo(this.qSel);
       $('<div class="cf-question__content" style="min-height:200px"><div class="custom-question--gauge"><div id="semi1_' + this.qid + '" class="custom-question--gauge__semicircle custom-question--gauge__semicircle--in-motion-1"></div><div id="semi2_' + this.qid + '" class="custom-question--gauge__semicircle custom-question--gauge__semicircle--in-motion-2"></div><div id="semi3_' + this.qid + '" class="custom-question--gauge__semicircle custom-question--gauge__semicircle--fixed"></div><div class="custom-question--gauge__inner-area"><p id="indicator_' + this.qid + '" class="custom-question--gauge__label"></p></div></div></div>').appendTo(this.qSel);
       $('.custom-question--gauge__semicircle--in-motion-1, .custom-question--gauge__semicircle--in-motion-2').css('background-color', customQuestionSettings.dialColor);
-      $('.custom-question--gauge__label').css('background-color', customQuestionSettings.labelColor);
+      $('.custom-question--gauge__label').css('color', customQuestionSettings.labelColor);
     },
 
     onGaugeChange: function(answer) {
