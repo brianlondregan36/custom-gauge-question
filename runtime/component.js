@@ -86,7 +86,7 @@ register(function (question, customQuestionSettings, questionViewSettings) {
     }
   }
 
-  gauge.Render();
+  gauge.Render();//wanted to create an object off of currentQuestion and use OLOO
   document.body.onkeyup = function(event) {
     if(event.which == 38 || event.which == 39) {
       gauge.SetIncrease();
