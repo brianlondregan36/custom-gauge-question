@@ -1,4 +1,8 @@
-.custom-question--gauge {
+.cq-gauge {
+  height: 200px;
+  box-sizing: initial;
+}
+.cq-gauge__container {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -7,7 +11,7 @@
   align-items: center;
   background-color: transparent;
 }
-.custom-question--gauge__semicircle {
+.cq-gauge__semicircle {
   top: 100px;
   width: 200px;
   height: 100px;
@@ -17,22 +21,22 @@
   transform-origin: top;
   transition: transform 0.5s linear;
 }
-.custom-question--gauge__semicircle--in-motion-1 {
+.cq-gauge__semicircle--in-motion-1 {
   background-color: #FF6347;
   transform: rotate(0deg);
   z-index: 1;
 }
-.custom-question--gauge__semicircle--in-motion-2 {
+.cq-gauge__semicircle--in-motion-2 {
   background-color: #FF6347;
   transform: rotate(0deg);
   z-index: 2;
 }
-.custom-question--gauge__semicircle--fixed {
+.cq-gauge__semicircle--fixed {
   background-color: #FFFFFF;
   border: 1px solid white;
   z-index: 3;
 }
-.custom-question--gauge__inner-area {
+.cq-gauge__inner-area {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -42,10 +46,30 @@
   text-align: center;
   z-index: 999;
 }
-.custom-question--gauge__label {
+.cq-gauge__label {
   padding-top: 6%;
   font-family: verdana;
   font-size: 24px;
   font-weight: bold;
   color: #000000;
+}
+.cq-gauge__controls {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  margin-top: 8px;
+}
+.cq-gauge__button {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: none;
+  background-color: #717a90;
+  color: #FFFFFF;
+  font-size: 1.3em;
+}
+
+.cf-page .cf-question__content :focus {
+  outline: #0050ff solid 2px;
+  outline-offset: 4px;
 }

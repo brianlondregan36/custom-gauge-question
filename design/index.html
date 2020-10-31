@@ -17,12 +17,17 @@
         </p>
         <p>
           <label for="gInput2">Label Color: </label>
-          <input id="gInput2" type="color" value="#000000" aria-required="true" aria-errormessage="errorArea1"required>
+          <input id="gInput2" type="color" value="#000000" aria-required="true" aria-errormessage="errorArea1" required>
           <span></span>
         </p>
         <p>
-          <label for="gInput3">% Increment Amount: </label>
-          <input id="gInput3" type="number" value="25" min="1" max="50" aria-required="true" aria-errormessage="errorArea1" required>
+          <label for="gInput3">Button Color: </label>
+          <input id="gInput3" type="color" value="#000000" aria-required="true" aria-errormessage="errorArea1" required>
+          <span></span>
+        </p>
+        <p>
+          <label for="gInput4">% Increment Amount: </label>
+          <input id="gInput4" type="number" value="25" min="1" max="50" aria-required="true" aria-errormessage="errorArea1" required>
           <span></span>
         </p>
       </fieldset>
@@ -34,28 +39,31 @@
   	var i1 = document.getElementById("gInput1");
     var i2 = document.getElementById("gInput2");
     var i3 = document.getElementById("gInput3");
+    var i4 = document.getElementById("gInput4");
     var ea = document.getElementById("errorArea1");
 
   	function setInputValue(settings) {
   		i1.value = settings.dialColor;
       i2.value = settings.labelColor;
-      i3.value = settings.incrementAmount;
+      i3.value = settings.buttonColor;
+      i4.value = settings.incrementAmount;
     }
 
   	function saveChanges() {
       var settings = {
         dialColor: i1.value,
         labelColor: i2.value,
-        incrementAmount: i3.value
+        buttonColor: i3.value,
+        incrementAmount: i4.value
       };
       ea.innerHTML = "";
   	  var hasError = false, errorMsg = "";
-      if(i1.value === "" || i2.value === "") {
+      if(i1.value === "" || i2.value === "" || i3.value === "") {
         hasError = true;
         errorMsg = "Please choose your colors!"
         ea.innerHTML = errorMsg;
       }
-      if(isNaN(parseInt(i3.value)) || parseInt(i3.value) < parseInt(i3.min) || parseInt(i3.value) > parseInt(i3.max)) {
+      if(isNaN(parseInt(i4.value)) || parseInt(i4.value) < parseInt(i4.min) || parseInt(i4.value) > parseInt(i4.max)) {
         hasError = true;
         errorMsg = "Please choose an increment amount that's between 1 and 50!";
         ea.innerHTML = errorMsg;
@@ -67,6 +75,7 @@
   	i1.addEventListener('input', saveChanges);
     i2.addEventListener('input', saveChanges);
     i3.addEventListener('input', saveChanges);
+    i4.addEventListener('input', saveChanges);
   </script>
 </body>
 </html>
